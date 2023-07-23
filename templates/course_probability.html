@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+{% block content %}
+
+<h1 class="text-3xl font-bold m-4 print:hidden">Enter Your Rank</h1>
+<form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+<div wire:id="0TWo31M0OaFApBrzM4PF" class="h-full w-full p-4">
+<div class="mt-10 mb-10">
+<div class="grid grid-cols-1 gap-4 xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 x">
+    {% if probability %}
+        <div>{{probability}}</div>    
+    {% endif %}
+    </div>
+    </div>
+    </div>
+
+<link rel="preload" as="style" href="https://jee.cutoff-analysis.in/build/assets/app.841218e5.css"><link rel="preload" as="style" href="https://jee.cutoff-analysis.in/build/assets/app.00ee04d9.css"><link rel="modulepreload" href="https://jee.cutoff-analysis.in/build/assets/app.f2c37013.js"><link rel="modulepreload" href="https://jee.cutoff-analysis.in/build/assets/alpinejs.f94e9c54.js"><link rel="modulepreload" href="https://jee.cutoff-analysis.in/build/assets/alpinejs-focus.9852a670.js"><link rel="stylesheet" href="https://jee.cutoff-analysis.in/build/assets/app.841218e5.css"><link rel="stylesheet" href="https://jee.cutoff-analysis.in/build/assets/app.00ee04d9.css"><script type="module" src="https://jee.cutoff-analysis.in/build/assets/app.f2c37013.js"></script>
+
+{% endblock %}

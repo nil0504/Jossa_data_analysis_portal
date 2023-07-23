@@ -1,0 +1,169 @@
+{% extends 'base.html'%}
+{% block content %}
+<style>
+    /* Style for the form container */
+    body{
+        background-color: #e8edef;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    /* Style for labels */
+    label {
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    /* Style for select element */
+    select {
+        padding: 2px;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+    }
+
+    /* Style for submit button */
+    input[type="submit"] {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    } .output{
+        max-width: 70%;
+            margin: 5% auto;
+            padding: 2%;
+            background-color: rgba(105, 164, 207, 0.8); 
+    }
+   .container2{
+         max-width: 30%;
+            margin: 5% auto;
+            padding: 2%;
+            background-color: rgba(255, 255, 255, 0.8);
+    }
+    #hide_h2,#hide_h4{
+        text-align: center;
+    }
+    #hide_h4{
+        display: none;
+    }
+    .table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    .table th,
+    .table td {
+        padding: 4px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .table th {
+        background-color: #f2f2f2;
+    }
+
+    .table tbody tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }      
+@media (max-width: 576px) {
+     .container2 {
+            max-width: 80%;
+            margin: 5% auto;
+            padding: 2%;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+    #hide_h2{
+      display: none;
+    }
+    #hide_h4{
+        display: block;
+    }
+}
+@media (max-width: 768px) {
+ .container2 {
+            max-width: 45%;
+            margin: 5% auto;
+            padding: 1%;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+}
+
+@media (max-width: 992px) {}
+
+@media (max-width: 1200px) {}
+
+</style>
+<div class="container2">
+    <h2 id="hide_h2">Ask Your Questions</h2>
+    <h4 id="hide_h4">Ask Your Questions</h4>
+<form method="POST" action="{% url 'home' %}">
+     {% csrf_token %}
+        <label for="year">Year</label>
+        <select id="year" name="year">
+            <option value="select-year">Select Year</option>
+            <option value="2016" name="2016">2016</option>
+            <option value="2017" name="2017">2017</option>
+            <option value="2018" name="2018">2018</option>
+            <option value="2019" name="2019">2019</option>
+            <option value="2020" name="2020">2020</option>
+            <option value="2021" name="2021">2021</option>
+            <option value="2022" name="2022">2022</option>
+        </select>
+        <label for="year">Questions</label>
+        <select id="year" name="question" aria-placeholder="Select Option" value="">
+            <option value="select_question" >Select Question</option>
+            <option value="Top Departments" >Top Departments</option>    
+            <option value="Top IITs">Top IITs</option>    
+        </select>
+        <input type="submit" value="Submit">
+    </form></div>
+    <div class="output">
+    {% if data %}
+      {% if Q == 'Top Departments' %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Index</th>
+                    <th>Department Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for course in data %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ course.department_name }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% elif Q == 'Top IITs' %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Index</th>
+                    <th>IIT Name</th>
+                    <th>IIT Score</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                {% for iit in data %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ iit.iit_name }}</td>
+                        <!-- <td>{{ iit.iit_score|floatformat:"2" }}</td> -->
+                        <td>{{ iit.year}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+{% endif %}
+</div>
+{% endblock %}
+ 

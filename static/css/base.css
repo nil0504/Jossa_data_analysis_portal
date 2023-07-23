@@ -1,0 +1,108 @@
+:root {
+    --main-color: #74d8ea;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+   
+}
+#body{
+     min-height: 100vh;
+}
+
+.logo2 {
+    display: flex;
+    height: 12vh;
+    width: 12vw;
+}
+
+
+/*Start Landing page*/
+.landing-page {
+    
+    background-size: cover;
+    position: relative;
+    transition: 5s;
+}
+
+
+.landing-page .headre-area .logo {
+    width: 300px;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    text-shadow: 0 0 15px var(--main-color);
+}
+
+.landing-page .headre-area .logo::first-letter {
+    background-color: var(--main-color);
+    font-size: 25px;
+    padding: 0 5px;
+    border-radius: 50%;
+}
+
+
+/*End Landing page*/
+
+
+
+/*Start Footer */
+
+.footer {
+    background-color: #333;
+    color: #eee;
+    padding: 10px;
+    text-align: center;
+}
+
+.footer.show {
+    display: none;
+}
+
+.footer p {
+    margin: 0;
+    color: var(--main-color);
+}
+
+/*end footer*/
+
+
+/*Start Grid System*/
+
+@media (min-width: 576px) {}
+
+@media (min-width: 768px) {}
+
+@media (min-width: 992px) {}
+
+@media (min-width: 1200px) {}
+
+/*End Grid System*/
+
+/*Start Phone */
+
+@media (max-width: 575px) {
+    .logo {
+        width: 350px;
+        font-size: 15px;
+    }
+
+    .logo::first-letter {
+        font-size: 20px;
+    }
+
+}
+
+/*End Phone */
+
+/*Start Tablet */
+@media (max-width: 991px) {}
+
+@media (max-width: 767px) {}

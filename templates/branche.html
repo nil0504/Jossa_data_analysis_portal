@@ -1,0 +1,29 @@
+
+{% extends 'base.html'%}
+{% block content %}
+
+<h1 class="text-3xl font-bold m-4 print:hidden">List of branches available in JoSAA counselling.</h1>
+<div wire:id="0TWo31M0OaFApBrzM4PF" class="h-full w-full p-4">
+<div class="mt-10 mb-10">
+<div class="grid grid-cols-1 gap-4 xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 x">
+    {% if data %}
+                {% for course in data %}
+                <div class="bg-white dark:bg-gray-800 shadow-md overflow-hidden rounded-lg flex flex-col">
+<a href="">
+<div class="px-4 py-5 sm:px-6 text-xl flex-grow flex justify-between align-baseline">
+<h3 class="leading-6 font-medium text-gray-900 dark:text-white">
+{{ course }}
+</h3>
+<span class="ml-2 text-indigo-600 hover:text-indigo-900">→</span>
+</div>
+</a>
+</div>
+                {% endfor %}          
+    {% endif %}
+    </div>
+    </div>
+    </div>
+
+<link rel="preload" as="style" href="https://jee.cutoff-analysis.in/build/assets/app.841218e5.css"><link rel="preload" as="style" href="https://jee.cutoff-analysis.in/build/assets/app.00ee04d9.css"><link rel="modulepreload" href="https://jee.cutoff-analysis.in/build/assets/app.f2c37013.js"><link rel="modulepreload" href="https://jee.cutoff-analysis.in/build/assets/alpinejs.f94e9c54.js"><link rel="modulepreload" href="https://jee.cutoff-analysis.in/build/assets/alpinejs-focus.9852a670.js"><link rel="stylesheet" href="https://jee.cutoff-analysis.in/build/assets/app.841218e5.css"><link rel="stylesheet" href="https://jee.cutoff-analysis.in/build/assets/app.00ee04d9.css"><script type="module" src="https://jee.cutoff-analysis.in/build/assets/app.f2c37013.js"></script>
+
+{% endblock %}

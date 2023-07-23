@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="static/css/master.css" />
+    <title>Joosa DAP</title>
+    <style>
+     .container2 {
+            max-width: 33%;
+            margin: 3% auto;
+            padding: 2%;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .container2 h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .container2 input[type="text"],.container2 input[type="password"],
+        .container2 textarea {
+            width: 100%;
+            padding: 3%;
+            margin-bottom: 3%;
+            border: 1px solid #ccc;
+            border-radius: 1%;
+        }
+
+        .container2 textarea {
+            resize: vertical;
+            height: 5%;
+        }
+
+         .container2 div.signup,.container2 button[type="submit"] {
+            width: 100%;
+            padding: 3%;
+            margin: 1px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .container2 div.signup,.container2 button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .container2 a{
+            text-decoration: none;
+            color: #fff;
+        }
+        .container2 p.error {
+    color: red;
+    text-align: center;
+    position: absolute; /* Added position property */
+    top: 0; /* Position the error message at the top */
+    left: 0;
+    width: 100%;
+}
+@media (max-width: 576px) {
+     .container2 {
+            max-width: 80%;
+            margin: 5% auto;
+            padding: 2%;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+}
+
+@media (max-width: 768px) {
+ .container2 {
+            max-width: 50%;
+            margin: 5% auto;
+            padding: 1%;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+}
+
+@media (max-width: 992px) {}
+
+@media (max-width: 1200px) {}
+
+    </style>
+</head>
+
+
+<body data-new-gr-c-s-check-loaded="14.1086.0" data-gr-ext-installed="">
+    
+
+    <!--Start Nav Bullets-->
+
+<div class="nav-bullets">
+        <div class="bullet" >
+            <div class="tooltip">About</div>
+        </div>
+        <div class="bullet" >
+            <div class="tooltip">XYZ</div>
+        </div>
+        <div class="bullet">
+            <div class="tooltip">ABC</div>
+        </div>
+        <div class="bullet">
+            <div class="tooltip">Acd</div>
+        </div>
+
+
+    </div>
+   <!--Start landing page-->
+   <div id="landing-page2" class="landing-page">
+       
+        <div class="container">
+            <div class="headre-area">
+
+                <div class="logo logo2"><img class="logo3" src="" alt=" ">Joosa DAP</div>
+                <div class="links-container ">
+                    <ul class="links ">
+                        <li><a class="lin" href="# " >About</a></li>
+                        <li><a class="lin" href="# " >XYZ</a></li>
+                        <li><a class="lin" href="# " >ABC</a></li>
+                        <li><a class="lin" href="# " >Acd</a></li>
+                    </ul>
+                    <i class="fa fa-bars fa-2x "></i>
+
+                </div>
+            </div>
+        </div>
+    <div class="container2">
+        <p style="color: red;text-align: center;">{{error}}</p>
+         
+        <h2>Sign-Up</h2>
+        <form  method="POST">
+            {% csrf_token %}
+          <div>
+            <label for="">Email</label>
+            <input type="text" name="email" placeholder="Email" required>
+          </div>
+          <div>
+            <label for="">Password</label>
+            <input type="password" name="password" placeholder="Password" required>
+          </div> 
+          <div>
+            <label for="">Confirm Password</label>
+            <input type="text" name="c-password" placeholder="Confirm Password" required>
+          </div> 
+           <div>
+            <button type="submit">Sigh-Up</button>
+            <a href="{% url 'login' %}"><div class="signup" style="text-align: center;">Already have Account</div></a>
+          </div>
+        </form>
+    </div>
+   
+ </div>
+    <!--End landing page-->
+     <!--Start Footer-->
+
+    <div class="footer ">
+        <p>
+            © 2023 Jossa
+            
+        </p>
+    </div>
+
+    <!--End Footer-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+     
+     <script src="/static/js/javascript.js "></script>
+
+</body>
+
+</html>
+
+  
+   
